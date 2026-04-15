@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 8%; /* #131313 */
+    --surface: 0 0% 8%; /* #131313 */
+    --surface-lowest: 0 0% 6%; /* #0E0E0E */
+    --surface-low: 0 0% 11%; /* #1c1b1b */
+    --surface-high: 0 0% 16%; /* #2A2A2A */
+    --foreground: 0 4% 90%; /* #e5e2e1 - No pure white */
+    
+    --primary: 10 100% 82%; /* #ffb4a6 Neon Peach */
+    --primary-container: 8 60% 30%; /* #7B2C1F Oxblood */
+    --primary-foreground: 0 4% 90%; 
+    --tertiary: 191 43% 72%; /* #94D0DA */
+    
+    --card: 0 0% 16%;
+    --card-foreground: 0 4% 90%;
+    --popover: 0 0% 11%;
+    --popover-foreground: 0 4% 90%;
+    
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 4% 90%;
+    --muted: 0 0% 11%;
+    --muted-foreground: 0 0% 30%;
+    
+    --accent: 10 100% 82%;
+    --accent-foreground: 0 4% 90%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 4% 90%;
+    --border: 0 0% 8%; /* Invisible borders */
+    --input: 0 0% 16%;
+    --ring: 10 100% 82%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .monolith-text {
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+  }
+  .surgical-label {
+    letter-spacing: 0.4em;
+  }
+}
