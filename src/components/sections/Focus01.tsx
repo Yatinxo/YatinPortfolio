@@ -41,6 +41,60 @@ export default function Focus01() {
           </div>
         </motion.div>
       </div>
+
+      {/* Movie/Album Posters Carousel Section */}
+      <div className="mt-32 border-t border-surface-container-high pt-24 group perspective-[2000px] overflow-hidden">
+        <div className="flex flex-col items-center justify-center text-center mb-24">
+          <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4">Focus 01.1</p>
+          <h3 className="text-4xl md:text-5xl font-black uppercase monolith-text text-on-surface">Movie/Album Posters</h3>
+          <p className="max-w-md text-on-surface-variant text-sm font-medium mx-auto mt-6">Experimental poster design exploring cinematic and musical narratives through raw visual aesthetics.</p>
+        </div>
+        
+        <div className="flex justify-center items-center py-20 pb-32">
+          {/* 3D Carousel Stage */}
+          <div className="relative w-[320px] aspect-[2/3] preserve-3d carousel-container transition-transform duration-1000 ease-in-out cursor-pointer">
+            {/* Poster 1 */}
+            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(0deg) translateZ(400px)" }}>
+              <img src="/R_singh.png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Rocket Singh Poster" />
+            </div>
+            {/* Poster 2 */}
+            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(120deg) translateZ(400px)" }}>
+              <img src="/Boy%20(dark).png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="2Hollis Boy Poster" />
+            </div>
+            {/* Poster 3 */}
+            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(240deg) translateZ(400px)" }}>
+              <img src="/after%20hours%20(dark).png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="The Weeknd After Hours Poster" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Game Posters Carousel Section */}
+      <div className="mt-32 border-t border-surface-container-high pt-24 group perspective-[2000px] overflow-hidden">
+        <div className="flex flex-col items-center justify-center text-center mb-24">
+          <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4">Focus 01.2</p>
+          <h3 className="text-4xl md:text-5xl font-black uppercase monolith-text text-on-surface">Game Posters</h3>
+          <p className="max-w-md text-on-surface-variant text-sm font-medium mx-auto mt-6">Immersive and bold promotional art exploring stylized game worlds and striking aesthetics.</p>
+        </div>
+        
+        <div className="flex justify-center items-center py-20 pb-32">
+          {/* 3D Carousel Stage */}
+          <div className="relative w-[320px] aspect-[2/3] preserve-3d carousel-container transition-transform duration-1000 ease-in-out cursor-pointer">
+            {/* Poster 1 */}
+            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(0deg) translateZ(400px)" }}>
+              <img src="/atlas.png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Atlas Game Poster" />
+            </div>
+            {/* Poster 2 */}
+            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(120deg) translateZ(400px)" }}>
+              <img src="/blaze1.png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Blaze Knife Poster 1" />
+            </div>
+            {/* Poster 3 */}
+            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(240deg) translateZ(400px)" }}>
+              <img src="/blaze2.png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Blaze Knife Poster 2" />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
