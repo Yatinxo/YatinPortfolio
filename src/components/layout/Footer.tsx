@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="w-full flex flex-col md:flex-row justify-between items-start px-6 py-12 md:px-12 bg-surface-lowest hidden md:flex">
+    <footer className="bg-[#0E0E0E] flex flex-col md:flex-row justify-between items-center px-8 py-12 w-full no-line-rule">
       <div className="mb-8 md:mb-0">
-        <span className="font-['Inter'] font-bold uppercase tracking-[0.4em] text-[11px] text-muted-foreground">©2026 YETI</span>
+        <span className="text-[0.6875rem] tracking-[0.4em] font-medium uppercase font-['Inter'] text-[#E5E2E1]/60">©2026 YETI</span>
       </div>
-      <div className="flex gap-12">
-        <a className="font-['Inter'] font-bold uppercase tracking-[0.4em] text-[11px] text-primary hover:text-white transition-colors cursor-ne-resize" href="#">LINKEDIN</a>
-        <a className="font-['Inter'] font-bold uppercase tracking-[0.4em] text-[11px] text-muted-foreground hover:text-primary transition-colors cursor-ne-resize" href="#">ARCHIVE</a>
-        <a className="font-['Inter'] font-bold uppercase tracking-[0.4em] text-[11px] text-muted-foreground hover:text-primary transition-colors cursor-ne-resize" href="#">EMAIL</a>
+      <div className="flex gap-8">
+        <a className="text-[0.6875rem] tracking-[0.4em] font-medium uppercase font-['Inter'] text-primary hover:text-white transition-all cursor-ne-resize" href="#">LINKEDIN</a>
+        <a className="text-[0.6875rem] tracking-[0.4em] font-medium uppercase font-['Inter'] text-[#E5E2E1]/60 hover:text-[#7B2C1F] transition-all cursor-ne-resize" href="#">ARCHIVE</a>
+        <a className="text-[0.6875rem] tracking-[0.4em] font-medium uppercase font-['Inter'] text-[#E5E2E1]/60 hover:text-[#7B2C1F] transition-all cursor-ne-resize" href="mailto:contact@yatinthakur.com">EMAIL</a>
       </div>
     </footer>
   )
