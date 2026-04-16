@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const posters = [
   { src: "/R_singh.png", alt: "Rocket Singh" },
@@ -10,8 +10,32 @@ const posters = [
   { src: "/Blazy3.png", alt: "Blaze Knife 2" },
 ];
 
+// Create a heavily duplicated array to simulate endless scrolling seamlessly
+const infinitePosters = [...posters, ...posters, ...posters, ...posters, ...posters, ...posters];
+
 export default function Focus01() {
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Start in the middle so the user can immediately scroll left or right
+  useEffect(() => {
+    if (scrollRef.current) {
+      const scrollWidth = scrollRef.current.scrollWidth;
+      const clientWidth = scrollRef.current.clientWidth;
+      scrollRef.current.scrollLeft = (scrollWidth / 2) - (clientWidth / 2);
+    }
+  }, []);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    
+    // Pseudo-infinite logic: jump quietly back to the middle when near the ends
+    if (scrollLeft <= 200) {
+      scrollRef.current.scrollLeft = (scrollWidth / 2) - (clientWidth / 2);
+    } else if (scrollLeft + clientWidth >= scrollWidth - 200) {
+      scrollRef.current.scrollLeft = (scrollWidth / 2) - (clientWidth / 2);
+    }
+  };
 
   const scrollLeft = () => {
     if (scrollRef.current) {
@@ -41,12 +65,12 @@ export default function Focus01() {
       <div className="relative w-full group">
         
         {/* Left Gradient Edge Blur */}
-        <div className="absolute top-0 left-0 h-full w-24 md:w-48 bg-gradient-to-r from-[#131313] via-[#131313]/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 left-0 h-full w-24 md:w-32 bg-gradient-to-r from-[#131313] via-[#131313]/90 to-transparent z-10 pointer-events-none"></div>
 
         {/* Left Arrow Button */}
         <button 
           onClick={scrollLeft}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#7B2C1F] text-white p-4 rounded-full backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer shadow-2xl"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#7B2C1F] text-white p-4 rounded-full backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.8)]"
           aria-label="Scroll left"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -55,35 +79,39 @@ export default function Focus01() {
         {/* Right Arrow Button */}
         <button 
           onClick={scrollRight}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#7B2C1F] text-white p-4 rounded-full backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer shadow-2xl"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#7B2C1F] text-white p-4 rounded-full backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer shadow-[0_0_20px_rgba(0,0,0,0.8)]"
           aria-label="Scroll right"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
         </button>
 
         {/* Right Gradient Edge Blur */}
-        <div className="absolute top-0 right-0 h-full w-24 md:w-48 bg-gradient-to-l from-[#131313] via-[#131313]/80 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 h-full w-24 md:w-32 bg-gradient-to-l from-[#131313] via-[#131313]/90 to-transparent z-10 pointer-events-none"></div>
 
         {/* Scroll Container */}
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto gap-8 px-8 md:px-32 snap-x snap-mandatory py-12 [&::-webkit-scrollbar]:hidden"
+          onScroll={handleScroll}
+          className="flex overflow-x-auto gap-8 px-[30vw] snap-x snap-mandatory py-12 [&::-webkit-scrollbar]:hidden scroll-smooth"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {posters.map((poster, index) => (
+          {infinitePosters.map((poster, index) => (
             <motion.div 
               key={index}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="flex-none snap-start group/item relative overflow-hidden bg-black aspect-[2/3] w-[260px] md:w-[360px] cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#2A2A2A]"
+              className="flex-none snap-center group/item relative bg-black/40 aspect-[2/3] w-[260px] md:w-[360px] cursor-pointer rounded-sm"
             >
+              {/* Changed object-cover to object-contain so posters are never cropped */}
               <img 
                 src={poster.src} 
                 alt={poster.alt}
-                className="w-full h-full object-cover grayscale opacity-70 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700"
+                className="w-full h-full object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700 p-2"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-end p-8">
-                <span className="font-bold uppercase tracking-[0.2em] text-[#E5E2E1] font-['Inter'] text-sm">{poster.alt}</span>
+              <div className="absolute inset-0 bg-transparent flex items-end p-6 pointer-events-none">
+                <span className="font-bold uppercase tracking-[0.2em] text-[#E5E2E1] font-['Inter'] text-xs drop-shadow-md opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                  {poster.alt}
+                </span>
               </div>
             </motion.div>
           ))}
