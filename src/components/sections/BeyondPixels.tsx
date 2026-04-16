@@ -8,19 +8,19 @@ export default function BeyondPixels() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           <div className="space-y-6">
             <span className="material-symbols-outlined text-4xl text-primary">sports_soccer</span>
-            <h3 className="text-xl font-bold uppercase tracking-tight">PLAYING FOOTBALL</h3>
+            <h3 className="text-xl font-bold uppercase tracking-tight">FOOTBALL</h3>
             <p className="text-on-surface-variant text-sm leading-relaxed">Mentioning it as a source of energy and team strategy.</p>
           </div>
           
           <div className="space-y-6">
             <span className="material-symbols-outlined text-4xl text-primary">graphic_eq</span>
-            <h3 className="text-xl font-bold uppercase tracking-tight">EXPERIMENTAL MUSIC</h3>
+            <h3 className="text-xl font-bold uppercase tracking-tight">MUSIC</h3>
             <p className="text-on-surface-variant text-sm leading-relaxed">Exploring soundscapes and rhythm.</p>
           </div>
           
           <div className="space-y-6">
             <span className="material-symbols-outlined text-4xl text-primary">draw</span>
-            <h3 className="text-xl font-bold uppercase tracking-tight">ANALOG DRAWING</h3>
+            <h3 className="text-xl font-bold uppercase tracking-tight">DRAWING</h3>
             <p className="text-on-surface-variant text-sm leading-relaxed">Returning to the fundamentals of form and line.</p>
           </div>
         </div>
