@@ -54,7 +54,7 @@ export default function Focus01() {
       <div className="px-8 md:px-12 flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
         <div>
           <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4">Focus 01</p>
-          <h2 className="text-5xl font-black uppercase monolith-text text-[#E5E2E1]">Posters & Print</h2>
+          <h2 className="text-[clamp(2.5rem,6vw,3.5rem)] font-black uppercase monolith-text text-[#E5E2E1] leading-tight">Posters & Print</h2>
         </div>
         <p className="max-w-xs text-[#E5E2E1]/60 text-sm font-medium leading-relaxed">
           A continuous horizontal exploration of cinematic, musical, and gaming narratives through raw visual aesthetics.
@@ -100,7 +100,7 @@ export default function Focus01() {
               key={index}
               whileHover={{ y: -8, scale: 1.01 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="flex-none snap-center group/item relative bg-black/40 aspect-[2/3] w-[260px] md:w-[360px] cursor-pointer rounded-[24px] shadow-lg hover:shadow-2xl transition-shadow duration-500"
+              className="flex-none snap-center group/item relative bg-black/40 aspect-[2/3] w-[75vw] sm:w-[260px] md:w-[360px] cursor-pointer rounded-[24px] shadow-lg hover:shadow-2xl transition-shadow duration-500"
             >
               {/* Changed object-cover to object-contain so posters are never cropped */}
               <img 

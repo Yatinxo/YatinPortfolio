@@ -7,7 +7,7 @@ export default function FinalCTA() {
         <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 to-transparent"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center text-center">
-        <h2 className="monolith-text text-6xl md:text-9xl font-black uppercase mb-12">Let's Build.</h2>
+        <h2 className="monolith-text text-[clamp(3.5rem,10vw,8rem)] font-black uppercase mb-12">Let's Build.</h2>
         <motion.a 
           whileHover={{ y: -6, backgroundColor: "#3a3939" }}
           whileTap={{ scale: 0.98 }}

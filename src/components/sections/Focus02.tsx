@@ -38,21 +38,21 @@ export default function Focus02() {
         </div>
         <div className="text-right order-1 md:order-2">
           <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4">Focus 02</p>
-          <h2 className="text-4xl md:text-5xl font-black uppercase monolith-text text-[#E5E2E1]">Video Editing & Motion Graphics</h2>
+          <h2 className="text-[clamp(2rem,6vw,3rem)] font-black uppercase monolith-text text-[#E5E2E1] leading-tight">Video Editing & Motion Graphics</h2>
         </div>
       </div>
       
       {/* CRT TV Container */}
-      <div className="w-full max-w-6xl mx-auto px-4 md:px-12 py-12">
+      <div className="w-full max-w-6xl mx-auto px-4 md:px-12 py-8 md:py-12">
         
         {/* Outer TV Body */}
-        <div className="bg-[#1C1C1C] rounded-[2rem] p-4 md:p-8 flex flex-col md:flex-row gap-8 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_5px_15px_rgba(255,255,255,0.05)] border-4 border-[#111]">
+        <div className="bg-[#1C1C1C] rounded-3xl md:rounded-[2rem] p-3 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_5px_15px_rgba(255,255,255,0.05)] border-2 md:border-4 border-[#111]">
           
           {/* TV Screen Unit */}
-          <div className="flex-1 bg-black rounded-[3rem] p-4 md:p-6 border-8 border-[#0a0a0a] relative flex items-center justify-center shadow-[inset_0_0_40px_#000]">
+          <div className="flex-1 bg-black rounded-2xl md:rounded-[3rem] p-2 md:p-6 border-4 md:border-8 border-[#0a0a0a] relative flex items-center justify-center shadow-[inset_0_0_40px_#000] overflow-hidden">
             
             {/* The Actual Display Tube */}
-            <div className="relative w-full aspect-video bg-[#050505] rounded-[2rem] overflow-hidden border border-[#222]">
+            <div className="relative w-full aspect-video bg-[#050505] rounded-xl md:rounded-[2rem] overflow-hidden border border-[#222]">
               
               <AnimatePresence mode="wait">
                 {!isSwitching ? (
@@ -88,11 +88,11 @@ export default function Focus02() {
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/10 to-transparent z-10 w-full h-[60%] skew-y-12 origin-top-left opacity-20 transform -translate-y-10"></div>
 
               {/* Retro TV OSD (On Screen Display) */}
-              <div className="absolute top-6 right-8 z-20 pointer-events-none opacity-80 mix-blend-screen">
-                <span className="font-mono text-[24px] text-[#00ff00] font-bold drop-shadow-[0_0_8px_rgba(0,255,0,0.8)]">CH {String(channel + 1).padStart(2, '0')}</span>
+              <div className="absolute top-4 right-4 md:top-6 md:right-8 z-20 pointer-events-none opacity-80 mix-blend-screen">
+                <span className="font-mono text-[14px] md:text-[24px] text-[#00ff00] font-bold drop-shadow-[0_0_8px_rgba(0,255,0,0.8)]">CH {String(channel + 1).padStart(2, '0')}</span>
               </div>
-              <div className="absolute bottom-6 left-8 z-20 pointer-events-none opacity-80 mix-blend-screen">
-                <span className="font-mono text-[14px] uppercase tracking-widest text-[#00ff00] font-bold drop-shadow-[0_0_8px_rgba(0,255,0,0.8)]">PLAY ► {videos[channel].alt}</span>
+              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-8 z-20 pointer-events-none opacity-80 mix-blend-screen">
+                <span className="font-mono text-[10px] md:text-[14px] uppercase tracking-widest text-[#00ff00] font-bold drop-shadow-[0_0_8px_rgba(0,255,0,0.8)]">PLAY ► {videos[channel].alt}</span>
               </div>
             </div>
             

@@ -3,7 +3,7 @@ export default function BeyondPixels() {
     <section className="py-32 px-8 bg-surface-container-lowest">
       <div className="max-w-4xl mx-auto">
         <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4 text-center">Interests</p>
-        <h2 className="text-6xl md:text-8xl font-black uppercase monolith-text text-center mb-24">Beyond the Pixels</h2>
+        <h2 className="text-[clamp(3.5rem,8vw,6rem)] font-black uppercase monolith-text text-center mb-16 md:mb-24 leading-none">Beyond the Pixels</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           <div className="space-y-6">
