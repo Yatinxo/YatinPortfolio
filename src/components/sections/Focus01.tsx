@@ -43,7 +43,7 @@ export default function Focus01() {
       </div>
 
       {/* Movie/Album Posters Carousel Section */}
-      <div className="mt-32 border-t border-surface-container-high pt-24 group perspective-[2000px] overflow-hidden">
+      <div className="mt-32 border-t border-surface-container-high pt-24 group perspective-2000 overflow-hidden">
         <div className="flex flex-col items-center justify-center text-center mb-24">
           <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4">Focus 01.1</p>
           <h3 className="text-4xl md:text-5xl font-black uppercase monolith-text text-on-surface">Movie/Album Posters</h3>
@@ -70,7 +70,7 @@ export default function Focus01() {
       </div>
 
       {/* Game Posters Carousel Section */}
-      <div className="mt-32 border-t border-surface-container-high pt-24 group perspective-[2000px] overflow-hidden">
+      <div className="mt-32 border-t border-surface-container-high pt-24 group perspective-2000 overflow-hidden">
         <div className="flex flex-col items-center justify-center text-center mb-24">
           <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4">Focus 01.2</p>
           <h3 className="text-4xl md:text-5xl font-black uppercase monolith-text text-on-surface">Game Posters</h3>
