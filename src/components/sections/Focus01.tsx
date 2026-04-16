@@ -1,100 +1,95 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
+
+const posters = [
+  { src: "/R_singh.png", alt: "Rocket Singh" },
+  { src: "/Boy%20(dark).png", alt: "2Hollis Boy" },
+  { src: "/after%20hours%20(dark).png", alt: "After Hours" },
+  { src: "/Potrait%20Announcement%20Template%20Light.png", alt: "Atlas Game" },
+  { src: "/Blazy2.png", alt: "Blaze Knife 1" },
+  { src: "/Blazy3.png", alt: "Blaze Knife 2" },
+];
 
 export default function Focus01() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="py-32 px-8 bg-surface-container-low overflow-hidden">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+    <section className="py-32 bg-[#131313] overflow-hidden relative border-t border-surface-container-high">
+      <div className="px-8 md:px-12 flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
         <div>
           <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4">Focus 01</p>
-          <h2 className="text-5xl font-black uppercase monolith-text">Graphic Design</h2>
+          <h2 className="text-5xl font-black uppercase monolith-text text-[#E5E2E1]">Posters & Print</h2>
         </div>
-        <p className="max-w-xs text-on-surface-variant text-sm font-medium">Static foundations. High-contrast typography and brutalist layout structures.</p>
+        <p className="max-w-xs text-[#E5E2E1]/60 text-sm font-medium leading-relaxed">
+          A continuous horizontal exploration of cinematic, musical, and gaming narratives through raw visual aesthetics.
+        </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        <motion.div 
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="md:col-span-8 group overflow-hidden bg-surface-container-high aspect-video relative cursor-pointer"
-        >
-          <img 
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
-            alt="Editorial Identity" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1WXBvD5NuCn-u868A35vyIuZkJR42StkvUOPVIJTQd3i3Z30-WGEdCFHhDEm6bXowwX7fcLC_AFWAbA-KDHsTUcghjOqGlPzSlsbB4vJQgD42QjooiUYhB6_dd1tJ0EnVrrYBky7Wsu134ymz77ZA0qfwe4Dw-aXCKLTv8_qzoxEVdS8B2bF7YpaB_9ejHyY4cxblkhMUNBhGQRZEL5eyywjKDB9J_bGYchw2aEEfl-LFkwo1YB0mjiGbp8eHoJkx0BR73U89CwM"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span className="font-bold uppercase tracking-widest text-primary">Editorial Identity</span>
-          </div>
-        </motion.div>
-        <motion.div 
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="md:col-span-4 group overflow-hidden bg-surface-container-high aspect-[3/4] relative cursor-pointer"
-        >
-          <img 
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
-            alt="Print Series" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz3htUxlCHEjonoHUAxNl1vE7vGfHy5whPio2GQ8mdg8YYi3ZJh0kQA5pvob8NjnrsLlhi_YJMxTa_NH2_4DS8ZuBBcSeYvC2CogAwXdxtNVZq7vTS_za2KamQJa-LB8f2QdHlAkeFMygAZvifAotlUJP8W9fNAfhXrsZH3HS2t_q83s29YCuaTjlpYIziB1bbsROao9YSg0tc71BTnosFynAmIeVJFsqK-VA2_eAYL0IFjUnhq7TtaQ8vG2z60eFmnkf23hbWvzk"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span className="font-bold uppercase tracking-widest text-primary">Print Series</span>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Movie/Album Posters Carousel Section */}
-      <div className="mt-32 border-t border-surface-container-high pt-24 group perspective-2000 overflow-hidden">
-        <div className="flex flex-col items-center justify-center text-center mb-24">
-          <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4">Focus 01.1</p>
-          <h3 className="text-4xl md:text-5xl font-black uppercase monolith-text text-on-surface">Movie/Album Posters</h3>
-          <p className="max-w-md text-on-surface-variant text-sm font-medium mx-auto mt-6">Experimental poster design exploring cinematic and musical narratives through raw visual aesthetics.</p>
-        </div>
+      {/* Horizontal Scroll Area */}
+      <div className="relative w-full group">
         
-        <div className="flex justify-center items-center py-20 pb-32">
-          {/* 3D Carousel Stage */}
-          <div className="relative w-[320px] aspect-[2/3] preserve-3d carousel-container transition-transform duration-1000 ease-in-out cursor-pointer">
-            {/* Poster 1 */}
-            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(0deg) translateZ(400px)" }}>
-              <img src="/R_singh.png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Rocket Singh Poster" />
-            </div>
-            {/* Poster 2 */}
-            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(120deg) translateZ(400px)" }}>
-              <img src="/Boy%20(dark).png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="2Hollis Boy Poster" />
-            </div>
-            {/* Poster 3 */}
-            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(240deg) translateZ(400px)" }}>
-              <img src="/after%20hours%20(dark).png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="The Weeknd After Hours Poster" />
-            </div>
-          </div>
-        </div>
-      </div>
+        {/* Left Gradient Edge Blur */}
+        <div className="absolute top-0 left-0 h-full w-24 md:w-48 bg-gradient-to-r from-[#131313] via-[#131313]/80 to-transparent z-10 pointer-events-none"></div>
 
-      {/* Game Posters Carousel Section */}
-      <div className="mt-32 border-t border-surface-container-high pt-24 group perspective-2000 overflow-hidden">
-        <div className="flex flex-col items-center justify-center text-center mb-24">
-          <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4">Focus 01.2</p>
-          <h3 className="text-4xl md:text-5xl font-black uppercase monolith-text text-on-surface">Game Posters</h3>
-          <p className="max-w-md text-on-surface-variant text-sm font-medium mx-auto mt-6">Immersive and bold promotional art exploring stylized game worlds and striking aesthetics.</p>
+        {/* Left Arrow Button */}
+        <button 
+          onClick={scrollLeft}
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#7B2C1F] text-white p-4 rounded-full backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer shadow-2xl"
+          aria-label="Scroll left"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+
+        {/* Right Arrow Button */}
+        <button 
+          onClick={scrollRight}
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[#7B2C1F] text-white p-4 rounded-full backdrop-blur-md transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer shadow-2xl"
+          aria-label="Scroll right"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+        {/* Right Gradient Edge Blur */}
+        <div className="absolute top-0 right-0 h-full w-24 md:w-48 bg-gradient-to-l from-[#131313] via-[#131313]/80 to-transparent z-10 pointer-events-none"></div>
+
+        {/* Scroll Container */}
+        <div 
+          ref={scrollRef}
+          className="flex overflow-x-auto gap-8 px-8 md:px-32 snap-x snap-mandatory py-12 [&::-webkit-scrollbar]:hidden"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {posters.map((poster, index) => (
+            <motion.div 
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="flex-none snap-start group/item relative overflow-hidden bg-black aspect-[2/3] w-[260px] md:w-[360px] cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#2A2A2A]"
+            >
+              <img 
+                src={poster.src} 
+                alt={poster.alt}
+                className="w-full h-full object-cover grayscale opacity-70 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-end p-8">
+                <span className="font-bold uppercase tracking-[0.2em] text-[#E5E2E1] font-['Inter'] text-sm">{poster.alt}</span>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        
-        <div className="flex justify-center items-center py-20 pb-32">
-          {/* 3D Carousel Stage */}
-          <div className="relative w-[320px] aspect-[2/3] preserve-3d carousel-container transition-transform duration-1000 ease-in-out cursor-pointer">
-            {/* Poster 1 */}
-            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(0deg) translateZ(400px)" }}>
-              <img src="/atlas.png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Atlas Game Poster" />
-            </div>
-            {/* Poster 2 */}
-            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(120deg) translateZ(400px)" }}>
-              <img src="/blaze1.png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Blaze Knife Poster 1" />
-            </div>
-            {/* Poster 3 */}
-            <div className="absolute inset-0 bg-black overflow-hidden preserve-3d group-hover:shadow-[0_0_80px_rgba(123,44,31,0.2)] transition-shadow duration-700 border border-surface-container-high" style={{ transform: "rotateY(240deg) translateZ(400px)" }}>
-              <img src="/blaze2.png" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Blaze Knife Poster 2" />
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
-  )
+  );
 }
