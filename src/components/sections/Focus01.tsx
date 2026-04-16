@@ -98,15 +98,15 @@ export default function Focus01() {
           {infinitePosters.map((poster, index) => (
             <motion.div 
               key={index}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="flex-none snap-center group/item relative bg-black/40 aspect-[2/3] w-[260px] md:w-[360px] cursor-pointer rounded-sm"
+              whileHover={{ y: -8, scale: 1.01 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="flex-none snap-center group/item relative bg-black/40 aspect-[2/3] w-[260px] md:w-[360px] cursor-pointer rounded-[24px] shadow-lg hover:shadow-2xl transition-shadow duration-500"
             >
               {/* Changed object-cover to object-contain so posters are never cropped */}
               <img 
                 src={poster.src} 
                 alt={poster.alt}
-                className="w-full h-full object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700 p-2"
+                className="w-full h-full object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700 p-2 rounded-[24px]"
               />
               <div className="absolute inset-0 bg-transparent flex items-end p-6 pointer-events-none">
                 <span className="font-bold uppercase tracking-[0.2em] text-[#E5E2E1] font-['Inter'] text-xs drop-shadow-md opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">

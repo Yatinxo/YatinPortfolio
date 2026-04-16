@@ -9,11 +9,11 @@ export default function FinalCTA() {
       <div className="relative z-10 flex flex-col items-center text-center">
         <h2 className="monolith-text text-6xl md:text-9xl font-black uppercase mb-12">Let's Build.</h2>
         <motion.a 
-          whileHover={{ scale: 1.05, backgroundColor: "#3a3939" }}
+          whileHover={{ y: -6, backgroundColor: "#3a3939" }}
           whileTap={{ scale: 0.98 }}
-          transition={{ type: "spring", stiffness: 400, damping: 25 }}
-          className="bg-surface text-on-surface px-12 py-6 text-xl font-bold uppercase tracking-widest cursor-pointer" 
-          href="mailto:contact@yatinthakur.com"
+          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="bg-surface text-on-surface px-12 py-5 text-lg font-bold uppercase tracking-widest cursor-pointer rounded-full shadow-lg hover:shadow-2xl transition-shadow" 
+          href="mailto:Yetithakur007@gmail.com"
         >
           Start a project
         </motion.a>
