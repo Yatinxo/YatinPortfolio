@@ -11,9 +11,9 @@ export default function FinalCTA() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="bg-white text-black px-8 py-3 text-sm md:text-base font-bold rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors cursor-pointer" 
-        href="mailto:Yetithakur007@gmail.com"
+        href="mailto:yetithakur007@gmail.com"
       >
-        Contact Me
+        yetithakur007@gmail.com
       </motion.a>
     </section>
   )
