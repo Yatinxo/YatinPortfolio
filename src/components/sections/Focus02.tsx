@@ -155,6 +155,7 @@ export default function Focus02() {
             
           </div>
         </div>
+        </div>
       </div>
     </section>
   );
