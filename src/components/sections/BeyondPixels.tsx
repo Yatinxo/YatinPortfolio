@@ -6,7 +6,7 @@ export default function BeyondPixels() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="spotify-card rounded-lg p-6 flex flex-col gap-4">
-            <div className="w-12 h-12 rounded-full bg-[#333] flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.3)] flex items-center justify-center">
               <span className="material-symbols-outlined text-white">sports_soccer</span>
             </div>
             <div>
@@ -16,7 +16,7 @@ export default function BeyondPixels() {
           </div>
           
           <div className="spotify-card rounded-lg p-6 flex flex-col gap-4">
-            <div className="w-12 h-12 rounded-full bg-[#333] flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.3)] flex items-center justify-center">
               <span className="material-symbols-outlined text-white">graphic_eq</span>
             </div>
             <div>
@@ -26,7 +26,7 @@ export default function BeyondPixels() {
           </div>
           
           <div className="spotify-card rounded-lg p-6 flex flex-col gap-4">
-            <div className="w-12 h-12 rounded-full bg-[#333] flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.3)] flex items-center justify-center">
               <span className="material-symbols-outlined text-white">draw</span>
             </div>
             <div>
