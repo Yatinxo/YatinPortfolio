@@ -4,7 +4,6 @@ import { useState, useRef } from "react";
 const videos = [
   { src: "/Atlas_V3.mp4", alt: "Atlas Trailer" },
   { src: "/BlazeV1.mp4", alt: "Blaze Knife Promo" },
-  { src: "/Porsche_live.mp4", alt: "Porsche Kinetic Run" },
   { src: "/MotionFinal4.mp4", alt: "Motion Reel" },
   { src: "/SpotifyFinal.mp4", alt: "Spotify Promo" },
 ];
@@ -30,29 +29,27 @@ export default function Focus02() {
   };
 
   return (
-    <section className="min-h-screen pt-32 pb-24 md:py-32 bg-[#131313] overflow-hidden relative flex items-center">
+    <section className="min-h-screen pt-32 pb-24 md:py-32 bg-[#131313] overflow-hidden relative flex flex-col items-center justify-center">
       
       {/* Background ambient light */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[40vw] h-[40vw] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8 relative z-10">
-        
-        {/* Left Side: Bio */}
-        <div className="w-full lg:w-5/12 order-2 lg:order-1 flex flex-col justify-center">
-          <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-6 tracking-widest">Portfolio MMXXVI</p>
-          <h1 className="monolith-text text-[clamp(4rem,8vw,7rem)] font-black uppercase text-[#E5E2E1] leading-[0.85] mb-10 tracking-tighter">
-            Visual<br/><span className="text-primary">Architect.</span>
-          </h1>
-          <p className="text-lg md:text-xl font-light text-[#E5E2E1]/80 max-w-xl leading-relaxed border-l-2 border-primary/50 pl-6">
-            Based in Himachal Pradesh, 3-4 years of experience creating captivating graphic designs and Videos. Worked at a startup before. Blending strong visual aesthetics with user-centric design principles. Passionate about transforming complex ideas into intuitive, engaging digital experiences. Constantly evolving skill set to stay ahead in the fast-paced tech world.
-          </p>
-        </div>
-        
-        {/* Right Side: CRT TV Container */}
-        <div className="w-full lg:w-7/12 order-1 lg:order-2 flex justify-end transform lg:translate-x-12">
+      {/* Hero Bio Section (Centered) */}
+      <div className="w-full max-w-4xl mx-auto px-6 md:px-12 text-center mb-16 md:mb-24 relative z-10 flex flex-col items-center">
+        <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-6 tracking-widest">Portfolio MMXXVI</p>
+        <h1 className="monolith-text text-[clamp(4rem,10vw,8rem)] font-black uppercase text-[#E5E2E1] leading-[0.85] mb-10 tracking-tighter">
+          Visual<br/><span className="text-primary">Architect.</span>
+        </h1>
+        <p className="text-lg md:text-xl font-light text-[#E5E2E1]/80 max-w-2xl leading-relaxed border-l-2 border-r-2 border-primary/50 px-6">
+          Based in Himachal Pradesh, 3-4 years of experience creating captivating graphic designs and Videos. Worked at a startup before. Blending strong visual aesthetics with user-centric design principles. Passionate about transforming complex ideas into intuitive, engaging digital experiences. Constantly evolving skill set to stay ahead in the fast-paced tech world.
+        </p>
+      </div>
+
+      {/* CRT TV Container */}
+      <div className="w-full max-w-6xl mx-auto px-4 md:px-12 relative z-10">
           
           {/* Outer TV Body */}
-          <div className="w-full max-w-[900px] bg-[#1C1C1C] rounded-3xl md:rounded-[2rem] p-3 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_5px_15px_rgba(255,255,255,0.05)] border-2 md:border-4 border-[#111]">
+          <div className="bg-[#1C1C1C] rounded-3xl md:rounded-[2rem] p-3 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_5px_15px_rgba(255,255,255,0.05)] border-2 md:border-4 border-[#111]">
           
           {/* TV Screen Unit */}
           <div className="flex-1 bg-black rounded-2xl md:rounded-[3rem] p-2 md:p-6 border-4 md:border-8 border-[#0a0a0a] relative flex items-center justify-center shadow-[inset_0_0_40px_#000] overflow-hidden">
@@ -154,7 +151,6 @@ export default function Focus02() {
             </div>
             
           </div>
-        </div>
         </div>
       </div>
     </section>
