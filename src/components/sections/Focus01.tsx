@@ -90,7 +90,7 @@ export default function Focus01() {
               <img 
                 src={poster.src} 
                 alt={poster.alt}
-                className="w-full h-full object-cover grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700"
+                className="w-full h-full object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700 p-4"
               />
 
               {/* Play Button Overlay (Spotify Style) */}
