@@ -85,12 +85,12 @@ export default function Focus01() {
               key={index}
               whileHover={{ y: -8, scale: 1.01 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="flex-none snap-start group/item relative bg-black/40 aspect-[2/3] w-[75vw] sm:w-[260px] md:w-[360px] cursor-pointer rounded-[24px] shadow-lg hover:shadow-2xl transition-shadow duration-500 overflow-hidden"
+              className="flex-none snap-start group/item relative bg-black/40 aspect-[2/3] w-[75vw] sm:w-[260px] md:w-[360px] cursor-pointer rounded-[24px] shadow-lg hover:shadow-2xl transition-shadow duration-500"
             >
               <img 
                 src={poster.src} 
                 alt={poster.alt}
-                className="w-full h-full object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700 p-4"
+                className="w-full h-full object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700 p-2 rounded-[24px]"
               />
 
               {/* Play Button Overlay (Spotify Style) */}
