@@ -12,6 +12,7 @@ const videos = [
 export default function Focus02() {
   const [channel, setChannel] = useState(0);
   const [isSwitching, setIsSwitching] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Play static noise slightly when channel changes
@@ -66,7 +67,7 @@ export default function Focus02() {
                     src={videos[channel].src} 
                     autoPlay
                     loop
-                    muted
+                    muted={isMuted}
                     playsInline
                     className="w-full h-full object-contain"
                   />
@@ -88,8 +89,9 @@ export default function Focus02() {
               <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/10 to-transparent z-10 w-full h-[60%] skew-y-12 origin-top-left opacity-20 transform -translate-y-10"></div>
 
               {/* Retro TV OSD (On Screen Display) */}
-              <div className="absolute top-4 right-4 md:top-6 md:right-8 z-20 pointer-events-none opacity-80 mix-blend-screen">
-                <span className="font-mono text-[14px] md:text-[24px] text-[#00ff00] font-bold drop-shadow-[0_0_8px_rgba(0,255,0,0.8)]">CH {String(channel + 1).padStart(2, '0')}</span>
+              <div className="absolute top-4 right-4 md:top-6 md:right-8 z-20 pointer-events-none opacity-80 mix-blend-screen text-right">
+                <span className="block font-mono text-[14px] md:text-[24px] text-[#00ff00] font-bold drop-shadow-[0_0_8px_rgba(0,255,0,0.8)]">CH {String(channel + 1).padStart(2, '0')}</span>
+                <span className="block font-mono text-[10px] md:text-[14px] text-[#00ff00] font-bold drop-shadow-[0_0_8px_rgba(0,255,0,0.8)] mt-1">VOL {isMuted ? 'MUTE' : 'ON'}</span>
               </div>
               <div className="absolute bottom-4 left-4 md:bottom-6 md:left-8 z-20 pointer-events-none opacity-80 mix-blend-screen">
                 <span className="font-mono text-[10px] md:text-[14px] uppercase tracking-widest text-[#00ff00] font-bold drop-shadow-[0_0_8px_rgba(0,255,0,0.8)]">PLAY ► {videos[channel].alt}</span>
@@ -122,6 +124,18 @@ export default function Focus02() {
                 aria-label="Previous Channel"
               >
                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#0c0c0c] shadow-[inset_0_2px_8px_rgba(0,0,0,0.9)] group-active:bg-[#050505]"></div>
+              </button>
+            </div>
+
+            {/* Volume Button */}
+            <div className="flex flex-col items-center gap-3">
+              <span className="text-[10px] uppercase font-bold text-[#555] tracking-widest">VOL</span>
+              <button 
+                onClick={() => setIsMuted(!isMuted)}
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] border border-[#333] shadow-[0_8px_20px_rgba(0,0,0,0.8),inset_0_2px_5px_rgba(255,255,255,0.1)] hover:to-[#222] active:shadow-[0_2px_5px_rgba(0,0,0,0.8),inset_0_5px_15px_rgba(0,0,0,0.9)] active:translate-y-1 transition-all flex items-center justify-center group"
+                aria-label="Toggle Volume"
+              >
+                 <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full shadow-[inset_0_2px_8px_rgba(0,0,0,0.9)] transition-colors ${!isMuted ? 'bg-[#003300] border border-[#00ff00] shadow-[0_0_15px_rgba(0,255,0,0.8)]' : 'bg-[#0c0c0c] group-active:bg-[#050505]'}`}></div>
               </button>
             </div>
 
