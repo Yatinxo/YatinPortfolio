@@ -11,9 +11,9 @@ function App() {
     <div className="min-h-screen bg-background text-foreground selection:bg-secondary selection:text-white flex flex-col">
       <Header />
       <main className="flex-grow">
+        <Focus02 />
         <HeroSection />
         <Focus01 />
-        <Focus02 />
         <BeyondPixels />
         <FinalCTA />
       </main>

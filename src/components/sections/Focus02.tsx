@@ -5,8 +5,8 @@ const videos = [
   { src: "/Atlas_V3.mp4", alt: "Atlas Trailer" },
   { src: "/BlazeV1.mp4", alt: "Blaze Knife Promo" },
   { src: "/Porsche_live.mp4", alt: "Porsche Kinetic Run" },
-  { src: "/Video_9.mp4", alt: "Motion Reel IX" },
-  { src: "/ed_1.3.mp4", alt: "Editorial Flow 1.3" },
+  { src: "/MotionFinal4.mp4", alt: "Motion Reel" },
+  { src: "/SpotifyFinal.mp4", alt: "Spotify Promo" },
 ];
 
 export default function Focus02() {

@@ -9,8 +9,8 @@ export default function HeroSection() {
         <h1 className="monolith-text text-[clamp(4rem,12vw,9rem)] font-black uppercase text-on-surface mb-8">
           Visual<br/><span className="text-primary-container">Architect.</span>
         </h1>
-        <p className="text-2xl md:text-3xl font-light text-on-surface-variant max-w-2xl leading-tight border-l-2 border-on-secondary-fixed-variant pl-8">
-          I carve digital monuments through Graphic Design and Motion Graphics, focusing on precision and raw visual power.
+        <p className="text-xl md:text-2xl font-light text-on-surface-variant max-w-3xl leading-tight border-l-2 border-on-secondary-fixed-variant pl-8">
+          Based in Himachal Pradesh, 3-4 years of experience creating captivating graphic designs and Videos. Worked at a startup before. Blending strong visual aesthetics with user-centric design principles. Passionate about transforming complex ideas into intuitive, engaging digital experiences. Constantly evolving skill set to stay ahead in the fast-paced tech world.
         </p>
       </div>
     </header>
