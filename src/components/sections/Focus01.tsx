@@ -47,18 +47,18 @@ export default function Focus01() {
   };
 
   return (
-    <section className="py-16 bg-spotify-black overflow-hidden relative">
-      <div className="px-6 md:px-12 max-w-7xl mx-auto flex flex-col mb-8">
-        <h2 className="text-2xl font-bold text-white mb-2">Popular Releases</h2>
+    <section className="py-24 md:py-32 bg-spotify-black overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Popular Releases</h2>
       </div>
       
       {/* Horizontal Scroll Area */}
-      <div className="relative w-full group max-w-7xl mx-auto">
+      <div className="relative w-full group">
         
         {/* Left Arrow Button */}
         <button 
           onClick={scrollLeft}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-4 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer backdrop-blur-md shadow-lg"
           aria-label="Scroll left"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -67,7 +67,7 @@ export default function Focus01() {
         {/* Right Arrow Button */}
         <button 
           onClick={scrollRight}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-4 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-0 cursor-pointer backdrop-blur-md shadow-lg"
           aria-label="Scroll right"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -77,36 +77,42 @@ export default function Focus01() {
         <div 
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex overflow-x-auto gap-6 px-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden scroll-smooth"
+          className="flex overflow-x-auto gap-6 md:gap-8 px-6 md:px-12 snap-x snap-mandatory pb-12 [&::-webkit-scrollbar]:hidden scroll-smooth max-w-7xl mx-auto"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {infinitePosters.map((poster, index) => (
             <motion.div 
               key={index}
-              className="flex-none snap-start group/card relative spotify-card w-[200px] md:w-[240px] p-4 rounded-lg cursor-pointer"
+              whileHover={{ y: -8, scale: 1.01 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="flex-none snap-start group/item relative bg-black/40 aspect-[2/3] w-[75vw] sm:w-[260px] md:w-[360px] cursor-pointer rounded-[24px] shadow-lg hover:shadow-2xl transition-shadow duration-500 overflow-hidden"
             >
-              <div className="relative aspect-square w-full mb-4 shadow-[0_8px_24px_rgba(0,0,0,0.5)] rounded-md overflow-hidden bg-black">
-                <img 
-                  src={poster.src} 
-                  alt={poster.alt}
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* Play Button Overlay */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 10 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="absolute bottom-2 right-2 opacity-0 translate-y-2 group-hover/card:opacity-100 group-hover/card:translate-y-0 transition-all duration-300 w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center text-black shadow-xl"
-                >
-                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current ml-1"><path d="M8 5v14l11-7z"/></svg>
-                </motion.div>
+              <img 
+                src={poster.src} 
+                alt={poster.alt}
+                className="w-full h-full object-cover grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700"
+              />
+
+              {/* Play Button Overlay (Spotify Style) */}
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="absolute bottom-6 right-6 opacity-0 translate-y-2 group-hover/item:opacity-100 group-hover/item:translate-y-0 transition-all duration-300 w-14 h-14 md:w-16 md:h-16 bg-spotify-green rounded-full flex items-center justify-center text-black shadow-xl z-20 pointer-events-auto"
+              >
+                <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current ml-1"><path d="M8 5v14l11-7z"/></svg>
+              </motion.div>
+
+              <div className="absolute inset-0 bg-transparent flex items-end p-6 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
+                <div className="flex flex-col">
+                  <span className="font-bold uppercase tracking-[0.2em] text-[#E5E2E1] font-['Inter'] text-sm md:text-base drop-shadow-md">
+                    {poster.alt}
+                  </span>
+                  <span className="text-spotify-text-secondary text-xs md:text-sm font-medium mt-1">
+                    {poster.year} • {poster.type}
+                  </span>
+                </div>
               </div>
-              
-              <h3 className="font-bold text-white text-base truncate">{poster.alt}</h3>
-              <p className="text-spotify-text-secondary text-sm font-medium mt-1">
-                {poster.year} • {poster.type}
-              </p>
             </motion.div>
           ))}
         </div>
