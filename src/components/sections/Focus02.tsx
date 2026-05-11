@@ -12,6 +12,7 @@ export default function Focus02() {
   const [channel, setChannel] = useState(0);
   const [isSwitching, setIsSwitching] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false); // Spotify play state
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Play static noise slightly when channel changes
@@ -29,27 +30,63 @@ export default function Focus02() {
   };
 
   return (
-    <section className="min-h-screen pt-32 pb-24 md:py-32 bg-[#131313] overflow-hidden relative flex flex-col items-center justify-center">
+    <section className="min-h-screen pb-24 bg-spotify-black overflow-hidden relative">
       
-      {/* Background ambient light */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-      {/* Hero Bio Section (Centered) */}
-      <div className="w-full max-w-4xl mx-auto px-6 md:px-12 text-center mb-16 md:mb-24 relative z-10 flex flex-col items-center">
-        <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-6 tracking-widest">Portfolio MMXXVI</p>
-        <h1 className="monolith-text text-[clamp(4rem,10vw,8rem)] font-black uppercase text-[#E5E2E1] leading-[0.85] mb-10 tracking-tighter">
-          Yatin<br/><span className="text-primary">Thakur.</span>
-        </h1>
-        <p className="text-lg md:text-xl font-light text-[#E5E2E1]/80 max-w-2xl leading-relaxed border-l-2 border-r-2 border-primary/50 px-6">
-          Based in Himachal Pradesh, 3-4 years of experience creating captivating graphic designs and Videos. Worked at a startup before. Blending strong visual aesthetics with user-centric design principles. Passionate about transforming complex ideas into intuitive, engaging digital experiences. Constantly evolving skill set to stay ahead in the fast-paced tech world.
-        </p>
+      {/* Spotify Artist Profile Header Gradient */}
+      <div className="pt-32 pb-8 px-6 md:px-12 relative spotify-gradient z-10 flex flex-col justify-end min-h-[40vh]">
+        <div className="flex flex-col items-start max-w-6xl mx-auto w-full">
+          {/* Verified Badge */}
+          <div className="flex items-center gap-2 mb-2">
+            <svg viewBox="0 0 24 24" className="w-6 h-6 text-blue-400 fill-current" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7L6 12.6l1.5-1.5 2.6 2.6 6.4-6.4 1.5 1.5-7.9 7.9z"/>
+            </svg>
+            <span className="text-sm font-medium text-white">Verified Artist</span>
+          </div>
+          
+          <h1 className="text-[clamp(4rem,10vw,8rem)] font-black text-white leading-none tracking-tighter mb-6 drop-shadow-lg">
+            Yatin Thakur
+          </h1>
+          
+          <p className="text-sm md:text-base font-medium text-spotify-text-secondary max-w-3xl leading-relaxed mb-2">
+            2,341,984 monthly listeners
+          </p>
+          <p className="text-sm md:text-base font-medium text-white/90 max-w-3xl leading-relaxed">
+            Based in Himachal Pradesh. 3-4 years of experience creating captivating graphic designs and Videos. Blending strong visual aesthetics with user-centric design principles. Passionate about transforming complex ideas into intuitive digital experiences.
+          </p>
+        </div>
       </div>
 
-      {/* CRT TV Container */}
-      <div className="w-full max-w-6xl mx-auto px-4 md:px-12 relative z-10">
+      <div className="w-full max-w-6xl mx-auto px-6 md:px-12 relative z-10 -mt-4">
+        {/* Play Controls Row */}
+        <div className="flex items-center gap-6 py-6 mb-8">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsPlaying(!isPlaying)}
+            className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-spotify-green hover:bg-spotify-green-hover flex items-center justify-center text-black shadow-lg"
+          >
+            {isPlaying ? (
+              <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            ) : (
+              <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current ml-1"><path d="M8 5v14l11-7z"/></svg>
+            )}
+          </motion.button>
           
+          <button className="px-4 py-1.5 rounded-full border border-spotify-text-secondary text-white font-bold text-sm tracking-widest hover:border-white hover:scale-105 transition-all">
+            FOLLOW
+          </button>
+          
+          <button className="text-spotify-text-secondary hover:text-white transition-colors">
+            <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          </button>
+        </div>
+
+        <h2 className="text-2xl font-bold text-white mb-6">Artist's Pick</h2>
+
+        {/* CRT TV Container */}
+        <div className="w-full relative">
           {/* Outer TV Body */}
-          <div className="bg-[#1C1C1C] rounded-3xl md:rounded-[2rem] p-3 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_5px_15px_rgba(255,255,255,0.05)] border-2 md:border-4 border-[#111]">
+          <div className="bg-[#1C1C1C] rounded-3xl md:rounded-[2rem] p-3 md:p-8 flex flex-col md:flex-row gap-4 md:gap-8 shadow-2xl border-2 md:border-4 border-[#111]">
           
           {/* TV Screen Unit */}
           <div className="flex-1 bg-black rounded-2xl md:rounded-[3rem] p-2 md:p-6 border-4 md:border-8 border-[#0a0a0a] relative flex items-center justify-center shadow-[inset_0_0_40px_#000] overflow-hidden">
@@ -152,6 +189,7 @@ export default function Focus02() {
             
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

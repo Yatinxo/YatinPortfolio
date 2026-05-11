@@ -1,27 +1,38 @@
 export default function BeyondPixels() {
   return (
-    <section className="py-32 px-8 bg-surface-container-lowest">
-      <div className="max-w-4xl mx-auto">
-        <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-4 text-center">Interests</p>
-        <h2 className="text-[clamp(3.5rem,8vw,6rem)] font-black uppercase monolith-text text-center mb-16 md:mb-24 leading-none">Beyond the Pixels</h2>
+    <section className="py-16 px-6 md:px-12 bg-spotify-base">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl font-bold text-white mb-8">About the Artist</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          <div className="space-y-6">
-            <span className="material-symbols-outlined text-4xl text-primary">sports_soccer</span>
-            <h3 className="text-xl font-bold uppercase tracking-tight">FOOTBALL</h3>
-            <p className="text-on-surface-variant text-sm leading-relaxed">Mentioning it as a source of energy and team strategy.</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="spotify-card rounded-lg p-6 flex flex-col gap-4">
+            <div className="w-12 h-12 rounded-full bg-[#333] flex items-center justify-center">
+              <span className="material-symbols-outlined text-white">sports_soccer</span>
+            </div>
+            <div>
+              <h3 className="text-white font-bold mb-2">Football</h3>
+              <p className="text-spotify-text-secondary text-sm leading-relaxed">Mentioning it as a source of energy and team strategy.</p>
+            </div>
           </div>
           
-          <div className="space-y-6">
-            <span className="material-symbols-outlined text-4xl text-primary">graphic_eq</span>
-            <h3 className="text-xl font-bold uppercase tracking-tight">MUSIC</h3>
-            <p className="text-on-surface-variant text-sm leading-relaxed">Exploring soundscapes and rhythm.</p>
+          <div className="spotify-card rounded-lg p-6 flex flex-col gap-4">
+            <div className="w-12 h-12 rounded-full bg-[#333] flex items-center justify-center">
+              <span className="material-symbols-outlined text-white">graphic_eq</span>
+            </div>
+            <div>
+              <h3 className="text-white font-bold mb-2">Music</h3>
+              <p className="text-spotify-text-secondary text-sm leading-relaxed">Exploring soundscapes and rhythm.</p>
+            </div>
           </div>
           
-          <div className="space-y-6">
-            <span className="material-symbols-outlined text-4xl text-primary">draw</span>
-            <h3 className="text-xl font-bold uppercase tracking-tight">DRAWING</h3>
-            <p className="text-on-surface-variant text-sm leading-relaxed">Returning to the fundamentals of form and line.</p>
+          <div className="spotify-card rounded-lg p-6 flex flex-col gap-4">
+            <div className="w-12 h-12 rounded-full bg-[#333] flex items-center justify-center">
+              <span className="material-symbols-outlined text-white">draw</span>
+            </div>
+            <div>
+              <h3 className="text-white font-bold mb-2">Drawing</h3>
+              <p className="text-spotify-text-secondary text-sm leading-relaxed">Returning to the fundamentals of form and line.</p>
+            </div>
           </div>
         </div>
       </div>

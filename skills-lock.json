@@ -5,6 +5,12 @@
       "source": "smithery.ai",
       "sourceType": "well-known",
       "computedHash": "3402c4706174c402d7013cc21eb16b9b11a071c3b7524946e6d766fef4fcb9e4"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "516bd2154eb843a8240e43d5b285229129853114ad7075a5e141e1c08e408c84"
     }
   }
 }
