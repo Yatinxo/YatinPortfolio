@@ -38,7 +38,7 @@ export default function Focus02() {
       <div className="w-full max-w-4xl mx-auto px-6 md:px-12 text-center mb-16 md:mb-24 relative z-10 flex flex-col items-center">
         <p className="surgical-label text-[0.6875rem] font-medium uppercase text-primary mb-6 tracking-widest">Portfolio MMXXVI</p>
         <h1 className="monolith-text text-[clamp(4rem,10vw,8rem)] font-black uppercase text-[#E5E2E1] leading-[0.85] mb-10 tracking-tighter">
-          Visual<br/><span className="text-primary">Architect.</span>
+          Yatin<br/><span className="text-primary">Thakur.</span>
         </h1>
         <p className="text-lg md:text-xl font-light text-[#E5E2E1]/80 max-w-2xl leading-relaxed border-l-2 border-r-2 border-primary/50 px-6">
           Based in Himachal Pradesh, 3-4 years of experience creating captivating graphic designs and Videos. Worked at a startup before. Blending strong visual aesthetics with user-centric design principles. Passionate about transforming complex ideas into intuitive, engaging digital experiences. Constantly evolving skill set to stay ahead in the fast-paced tech world.
