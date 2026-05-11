@@ -48,7 +48,7 @@ export default function Focus02() {
           </h1>
           
           <p className="text-sm md:text-base font-medium text-spotify-text-secondary max-w-3xl leading-relaxed mb-2">
-            2,341,984 monthly listeners
+            3 clients
           </p>
           <p className="text-sm md:text-base font-medium text-white/90 max-w-3xl leading-relaxed">
             Based in Himachal Pradesh. 3-4 years of experience creating captivating graphic designs and Videos. Blending strong visual aesthetics with user-centric design principles. Passionate about transforming complex ideas into intuitive digital experiences.
