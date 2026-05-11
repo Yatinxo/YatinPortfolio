@@ -6,10 +6,7 @@ export default function Header() {
       
       {/* Logo & Name */}
       <div className="flex items-center gap-3 md:gap-4">
-        {/* We can use the logo image, but maybe make it a green circle or keep as is */}
-        <div className="w-8 h-8 md:w-10 md:h-10 bg-spotify-green rounded-full flex items-center justify-center">
-          <span className="text-black font-black text-xs md:text-sm">YT</span>
-        </div>
+        <img src="/logo.png" alt="Yatin Thakur Logo" className="h-8 md:h-10 w-auto object-contain" />
         <span className="text-lg md:text-xl font-bold tracking-tight text-white font-sans hidden sm:inline-block">Yatin Thakur</span>
       </div>
 
